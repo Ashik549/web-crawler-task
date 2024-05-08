@@ -12,7 +12,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 base_url = "https://shop.adidas.jp"
-chrome_driver_path = "./driver/chromedriver.exe"  # Path to ChromeDriver executable
 products = []
 
 
