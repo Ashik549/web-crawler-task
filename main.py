@@ -22,6 +22,7 @@ def main():
     options = Options()
     options.add_argument("--window-size=1920,1080")
     # options.add_argument("--headless")
+    # headless option is disabled due to macOS optimazation issue.
     options.add_argument("--no-sandbox")
     options.add_argument("--log-level=3")
     options.add_argument("--disable-gpu")
@@ -85,8 +86,6 @@ def fetch_product_info(driver, product_id):
         product.size_chart = parse_size_chart_html(driver)
         product.product_meta = parse_product_meta(driver)
         product.tags = parse_product_tags(driver)
-
-        logger.info("Product info for ID %s Fetched successfully", product_id)
 
     except Exception as e:
         logger.error("Failed to fetch product info for product ID %s: %s", product_id,
